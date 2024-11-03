@@ -1,5 +1,6 @@
 package praktikum;
 
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -7,7 +8,7 @@ import org.junit.runners.Parameterized;
 import static org.junit.Assert.assertFalse;
 
 @RunWith(Parameterized.class)
-public class WrongAccountTest {
+public class InvalidAccountTest {
 
     @Parameterized.Parameter
         public String name;
@@ -26,7 +27,8 @@ public class WrongAccountTest {
     }
 
     @Test
-    public void wrongAccountName() {
+    @DisplayName("Check invalid account name")
+    public void invalidAccountName() {
         Account account = new Account(name);
         assertFalse(account.checkNameToEmboss());
     }
